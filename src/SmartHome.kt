@@ -101,4 +101,5 @@ fun main() {
     val smartDevice2: SmartDevice = SmartLightDevice("Philipps Hue", "Lightning")
     smartDevice2.turnOn()
     smartDevice2.printDeviceinfo()
+    println(smartDevice2.turnOff())
 }
