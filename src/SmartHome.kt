@@ -2,8 +2,7 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 class SmartHome(
-    val smartTvDevice: SmartTvDevice,
-    val smartLightDevice: SmartLightDevice
+    val smartTvDevice: SmartTvDevice, val smartLightDevice: SmartLightDevice
 ) {
 
     var deviceTurnOnCount = 0
@@ -74,9 +73,7 @@ class SmartHome(
 }
 
 class Rangeregulator(
-    initialValue: Int,
-    private val minValue: Int,
-    private val maxValue: Int
+    initialValue: Int, private val minValue: Int, private val maxValue: Int
 ) : ReadWriteProperty<Any?, Int> {
 
     var fieldData = initialValue
@@ -87,8 +84,7 @@ class Rangeregulator(
     }
 
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
-        if (value in minValue..maxValue)
-            fieldData = value
+        if (value in minValue..maxValue) fieldData = value
     }
 
 }
