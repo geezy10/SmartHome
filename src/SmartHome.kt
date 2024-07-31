@@ -91,11 +91,24 @@ class Rangeregulator(
 
 
 fun main() {
-    val smartDevice1: SmartDevice = SmartTvDevice("Android Tv", "Entertainmnent")
+    val smartDevice1: SmartTvDevice = SmartTvDevice("Android Tv", "Entertainmnent")
     smartDevice1.turnOn()
     smartDevice1.printDeviceinfo()
-    val smartDevice2: SmartDevice = SmartLightDevice("Philipps Hue", "Lightning")
+    (smartDevice1 as SmartTvDevice).increaseSpeakerVolume()
+
+    val smartDevice2: SmartLightDevice = SmartLightDevice("Philipps Hue", "Lightning")
     smartDevice2.turnOn()
     smartDevice2.printDeviceinfo()
-    println(smartDevice2.turnOff())
+    smartDevice2.increaseBrightness()
+    smartDevice2.decreaseBrightness()
+
+
+    val smarthome: SmartHome = SmartHome(smartDevice1,smartDevice2)
+    smarthome.decreaseLightBrightness()
+    smarthome.changeTvChannelToNext()
+    smarthome.turnOffAllDevices()
+
+
+
 }
+

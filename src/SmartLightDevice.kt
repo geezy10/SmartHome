@@ -19,10 +19,12 @@ class SmartLightDevice(deviceName: String, deviceCategory: String) :
     }
 
     override fun turnOn() {
-        deviceStatus = "on"
-        brightnesslvl = 2
-        println("$name turned on. The brightness level is $brightnesslvl")
-    }
+
+            deviceStatus = "on"
+            brightnesslvl = 2
+            println("$name turned on. The brightness level is $brightnesslvl")
+        }
+
 
     override fun turnOff() {
         deviceStatus = "off"
